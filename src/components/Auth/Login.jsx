@@ -11,20 +11,23 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(null); // Clear previous errors
 
     // Call login from AuthContext
     const result = await login(email, password);
 
     if (result.success) {
-      navigate("/dashboard"); // Redirect to dashboard
+      // Redirect to dashboard after successful login
+      navigate("/dashboard");
     } else {
+      // Show error message if login fails
       setError(result.message);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen ">
-      <div className="w-full max-w-md p-6  shadow-md rounded-lg">
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="w-full max-w-md p-6 shadow-md rounded-lg">
         <h2 className="text-2xl font-bold text-center text-gray-100 mb-6">Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>

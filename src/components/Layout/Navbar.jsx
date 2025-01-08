@@ -16,13 +16,15 @@ const Navbar = () => {
         <a href="/login">Login</a>
       )} */}
             <div className="navbar  pt-10 m-0">
-                <div className="flex-1 gap-3">
-                    <img src="/logo.svg" alt="" />
-                    <p className="text-white text-xl">MUSIC LEARNING HUB</p>
-                </div>
+                <Link  className="flex-1 gap-3" to="/">
+                    <div  className="flex items-center gap-3">
+                        <img src="/logo.svg" alt="" />
+                        <p className="text-white text-xl">MUSIC LEARNING HUB</p>
+                    </div>
+                </Link>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Home</a></li>
+                        <li><Link to="/">Home</Link></li>
                         <li>
                             <details>
                                 <summary>Instructors</summary>
@@ -34,11 +36,13 @@ const Navbar = () => {
                             </details>
                         </li>
                         <li><a>About</a></li>
-                        <li><a>Contact</a></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
-                    <Button variant="primary" size="sm">
-                        Signup
-                    </Button>
+                    <Link to="/register">
+                        <Button variant="primary" size="sm">
+                            Signup
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </nav>

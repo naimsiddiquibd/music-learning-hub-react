@@ -9,6 +9,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Guitar from "./pages/Guitar";
 import Drums from "./pages/Drums";
 import Piano from "./pages/Piano";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/guitar" element={<Guitar />} />
           <Route path="/drums" element={<Drums />} />
           <Route path="/piano" element={<Piano />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route
             path="/dashboard"
             element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
