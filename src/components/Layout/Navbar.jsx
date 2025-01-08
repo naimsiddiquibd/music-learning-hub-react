@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import Button from "./Button";
 
@@ -26,9 +27,9 @@ const Navbar = () => {
                             <details>
                                 <summary>Instructors</summary>
                                 <ul className="bg-base-100 rounded-t-none p-2">
-                                    <li><a>Guitar</a></li>
-                                    <li><a>Piano</a></li>
-                                    <li><a>Drams</a></li>
+                                    <li><Link to="/guitar">Guitar</Link></li>
+                                    <li><Link to="/piano">Piano</Link></li>
+                                    <li><Link to="/drums">Drams</Link></li>
                                 </ul>
                             </details>
                         </li>

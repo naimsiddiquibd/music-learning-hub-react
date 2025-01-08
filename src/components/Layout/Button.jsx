@@ -15,7 +15,7 @@ const Button = ({
 
   const variants = {
     primary: "bg-[#B63FA1] font-light text-sm cursor-pointer",
-    secondary: "border-[#B63FA1] border-2 hover:bg-[#B63FA1] hover:text-white text-gray-900 font-light text-sm cursor-pointer",
+    secondary: "border-[#B63FA1] border-2 hover:bg-[#B63FA1] hover:text-white text-gray-800 font-light text-sm cursor-pointer",
     danger: "bg-red-500 hover:bg-red-600",
     success: "bg-green-500 hover:bg-green-600",
   };
