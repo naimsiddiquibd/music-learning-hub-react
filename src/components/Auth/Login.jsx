@@ -1,27 +1,22 @@
 import { useState } from "react";
+import axiosInstance from "../../utils/axiosInstance";
 import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
   const { login } = useAuth();
-  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null); // Clear previous errors
-
-    // Call login from AuthContext
-    const result = await login(email, password);
-
-    if (result.success) {
-      // Redirect to dashboard after successful login
-      navigate("/dashboard");
-    } else {
-      // Show error message if login fails
-      setError(result.message);
+    try {
+      const response = await axiosInstance.post("/login", formData);
+      const { token, role } = response.data.data;
+      console.log("Token: ", token);
+      console.log("Role: ", role);
+      login(token, role); // Save token and role in context
+    } catch (err) {
+      setError("Invalid credentials. Please try again.");
     }
   };
 
@@ -29,7 +24,7 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-md p-6 shadow-md rounded-lg">
         <h2 className="text-2xl font-bold text-center text-gray-100 mb-6">Login</h2>
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-400">
               Email
@@ -38,8 +33,8 @@ const Login = () => {
               type="email"
               id="email"
               placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B63FA1] focus:border-[#B63FA1]"
             />
           </div>
@@ -51,8 +46,8 @@ const Login = () => {
               type="password"
               id="password"
               placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
               className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B63FA1] focus:border-[#B63FA1]"
             />
           </div>

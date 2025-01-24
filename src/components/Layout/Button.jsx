@@ -14,8 +14,8 @@ const Button = ({
     "px-4 py-2 rounded text-white font-medium transition duration-200 ease-in-out";
 
   const variants = {
-    primary: "bg-[#B63FA1] font-light text-sm cursor-pointer",
-    secondary: "border-[#B63FA1] border-2 hover:bg-[#B63FA1] hover:text-white text-gray-900 font-light text-sm cursor-pointer",
+    primary: "bg-[#B63FA1] font-light text-sm cursor-pointer]",
+    secondary: "border-[#B63FA1] border-2 hover:bg-[#B63FA1] hover:text-white text-[#000000] font-light text-sm cursor-pointer",
     danger: "bg-red-500 hover:bg-red-600",
     success: "bg-green-500 hover:bg-green-600",
   };

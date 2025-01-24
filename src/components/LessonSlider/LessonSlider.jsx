@@ -18,7 +18,7 @@ const LessonSlider = () => {
                             <h2 className="card-title text-[#030B1C] font-normal w-52">Mastering Chords and Strumming Patterns</h2>
                             <p className='text-gray-400 w-72 font-normal'>Learn the essential chords and strumming techniques that form the foundation of guitar playing.</p>
                             <div className="card-actions justify-start">
-                                <Button variant="secondary" size="sm">
+                                <Button variant="primary" size="sm">
                                     See More...
                                 </Button>
                             </div>
@@ -37,7 +37,7 @@ const LessonSlider = () => {
                             <h2 className="card-title text-[#030B1C] font-normal w-52">Mastering Chords and Strumming Patterns</h2>
                             <p className='text-gray-400 w-72 font-normal'>Learn the essential chords and strumming techniques that form the foundation of guitar playing.</p>
                             <div className="card-actions justify-start">
-                                <Button variant="secondary" size="sm">
+                                <Button variant="primary" size="sm">
                                     See More...
                                 </Button>
                             </div>
@@ -56,7 +56,7 @@ const LessonSlider = () => {
                             <h2 className="card-title text-[#030B1C] font-normal w-52">Mastering Chords and Strumming Patterns</h2>
                             <p className='text-gray-400 w-72 font-normal'>Learn the essential chords and strumming techniques that form the foundation of guitar playing.</p>
                             <div className="card-actions justify-start">
-                                <Button variant="secondary" size="sm">
+                                <Button variant="primary" size="sm">
                                     See More...
                                 </Button>
                             </div>
